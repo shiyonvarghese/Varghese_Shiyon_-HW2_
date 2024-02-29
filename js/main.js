@@ -28,12 +28,8 @@ function changeBGImage() {
 	// bug fix #2 should go here. it's at most 3 lines of JS code.
 	puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
 }
-
-
 function reset() {
     console.log("reset clicked");
-
-    changePieces(this.id);
 }
 
 function changePieces(id) {
