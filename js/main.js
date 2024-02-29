@@ -11,6 +11,7 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
 	puzzleBoard = document.querySelector(".puzzle-board"),
 	puzzlePieces = document.querySelectorAll(".puzzle-pieces img"),
 	dropZones = document.querySelectorAll('.drop-zone'),
+    dropButton = document.querySelector('#resetBut'),
 	// store the dragged piece in a global variable
 	// because we need it in the handleDrop function
 	draggedPiece;
@@ -26,6 +27,20 @@ function changeBGImage() {
 
 	// bug fix #2 should go here. it's at most 3 lines of JS code.
 	puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
+}
+
+
+function reset() {
+    console.log("reset clicked");
+
+    changePieces(this.id);
+}
+
+function changePieces(id) {
+    document.getElementById("imageTopLeft").src = "images/topLeft_" + id + ".jpg";
+    document.getElementById("imageTopRight").src = "images/topRight_" + id + ".jpg";
+    document.getElementById("imageBottomLeft").src = "images/bottomLeft_" + id + ".jpg";
+    document.getElementById("imageBottomRight").src = "images/bottomRight_" + id + ".jpg";
 }
 
 function handleStartDrag() { 
